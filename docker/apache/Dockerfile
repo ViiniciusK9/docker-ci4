@@ -17,8 +17,14 @@ RUN apt-get install -y \
     libreadline-dev \
     libfreetype6-dev
 
+RUN docker-php-ext-configure intl
+
 RUN docker-php-ext-install \
+    bz2 \
     intl \
+    bcmath \
+    opcache \
+    calendar \
     pdo_mysql \
     mysqli
 
